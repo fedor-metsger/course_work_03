@@ -36,14 +36,10 @@ def main():
     main
     """
     trans = load_transactions(TRANSACTIONS_FILE)
-#    trans = load_transactions("test_transactions.json")
     if not trans:
         return
-#    print(f"Загружено {len(trans)} транзакций")
-#    print_stats(trans)
 
     trans = get_filtered(trans)
-#    print(f"Отфильтровано {len(trans)} транзакций по статусу {FILTER_STATE}")
 
     trans = get_first(trans, COUNT_TO_PRINT)
 
