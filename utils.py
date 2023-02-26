@@ -8,7 +8,12 @@ def load_transactions(filename: str):
     """
 
 #    tr_list = requests.get(JSON_URL).json()
-    with open(filename, mode='r', encoding='utf-8') as inf:
-        tr_list = json.load(inf)
-
-    return tr_list
+    try:
+        with open(filename, mode='r', encoding='utf-8') as inf:
+            tr_list = json.load(inf)
+        if tr_list:
+            print("INFO: Данные загружены успешно")
+            return tr_list
+    except:
+        print("ERROR: Ошибка при загрузке транзакций")
+        return None
