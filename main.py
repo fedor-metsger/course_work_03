@@ -48,8 +48,13 @@ def main():
 
     trans = get_first(trans, COUNT_TO_PRINT)
 
+    first = True
     for tr in trans:
-        print("\n" + get_formatted(tr))
+        if first:
+           first = False
+        else:
+            print()
+        print(get_formatted(tr))
 
 
 if __name__ == "__main__":
