@@ -6,15 +6,11 @@ TRANSACTIONS_FILE = "operations.json"
 FILTER_STATE = "EXECUTED"
 COUNT_TO_PRINT = 5
 
-def main():
+def print_stats(trans):
     """
-    main
+    Выводит на консоль статистику по загруженным данным
+    Используется для отладки
     """
-    trans = load_transactions(TRANSACTIONS_FILE)
-#    trans = load_transactions("test_transactions.json")
-    if not trans: return
-#    print(f"Загружено {len(trans)} транзакций")
-
     cnt, cnt_from, cnt_to, states, tr_from, tr_to = 0, 0, 0, set(), set(), set()
     for tr in trans:
         if "state" in tr:
@@ -33,6 +29,18 @@ def main():
     print(tr_from)
     print(f"Атрибут 'to' есть у {cnt_to} транзакций")
     print(tr_to)
+
+
+def main():
+    """
+    main
+    """
+    trans = load_transactions(TRANSACTIONS_FILE)
+#    trans = load_transactions("test_transactions.json")
+    if not trans: return
+#    print(f"Загружено {len(trans)} транзакций")
+
+#    print_stats(trans)
 
     trans = get_filtered(trans, FILTER_STATE)
 #    print(f"Отфильтровано {len(trans)} транзакций по статусу {FILTER_STATE}")
