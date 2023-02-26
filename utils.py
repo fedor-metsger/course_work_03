@@ -13,7 +13,7 @@ def load_transactions(filename: str):
         with open(filename, mode='r', encoding='utf-8') as inf:
             tr_list = json.load(inf)
         if tr_list:
-            print("INFO: Данные загружены успешно")
+#            print("INFO: Данные загружены успешно")
             return tr_list
     except Exception as e:
         print("ERROR: Ошибка при загрузке транзакций из файла:", repr(e))
