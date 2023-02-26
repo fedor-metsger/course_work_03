@@ -6,6 +6,7 @@ TRANSACTIONS_FILE = "operations.json"
 FILTER_STATE = "EXECUTED"
 COUNT_TO_PRINT = 5
 
+
 def print_stats(trans):
     """
     Выводит на консоль статистику по загруженным данным
@@ -37,9 +38,9 @@ def main():
     """
     trans = load_transactions(TRANSACTIONS_FILE)
 #    trans = load_transactions("test_transactions.json")
-    if not trans: return
+    if not trans:
+        return
 #    print(f"Загружено {len(trans)} транзакций")
-
 #    print_stats(trans)
 
     trans = get_filtered(trans, FILTER_STATE)
