@@ -1,6 +1,8 @@
 
 import json
 
+FILTER_STATE = "EXECUTED"
+
 
 def load_transactions(filename: str):
     """
@@ -20,15 +22,15 @@ def load_transactions(filename: str):
         return None
 
 
-def get_filtered(transactions, state):
+def get_filtered(transactions):
     """
     Получает на вход список транзакций
     Возвращает список транзакций, отфильтрованный по
-    полю state'
+    полю state == "EXECUTED"
     """
     res = []
     for i in transactions:
-        if "state" in i and i["state"] == state:
+        if "state" in i and i["state"] == "EXECUTED":
             res.append(i)
     return res
 
