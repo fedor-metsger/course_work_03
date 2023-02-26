@@ -4,12 +4,14 @@ from utils import load_transactions
 JSON_URL = "https://www.jsonkeeper.com/b/ZJZP"
 TRANSACTIONS_FILE = "operations.json"
 
+
 def main():
     """
     main
     """
-    trans = load_transactions(TRANSACTIONS)
+    trans = load_transactions(TRANSACTIONS_FILE)
     print(trans)
+
 
 if __name__ == "__main__":
     main()
