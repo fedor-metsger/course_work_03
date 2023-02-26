@@ -3,7 +3,6 @@ from utils import load_transactions, get_filtered, get_first, get_formatted
 
 JSON_URL = "https://www.jsonkeeper.com/b/ZJZP"
 TRANSACTIONS_FILE = "operations.json"
-FILTER_STATE = "EXECUTED"
 COUNT_TO_PRINT = 5
 
 
@@ -43,7 +42,7 @@ def main():
 #    print(f"Загружено {len(trans)} транзакций")
 #    print_stats(trans)
 
-    trans = get_filtered(trans, FILTER_STATE)
+    trans = get_filtered(trans)
 #    print(f"Отфильтровано {len(trans)} транзакций по статусу {FILTER_STATE}")
 
     trans = get_first(trans, COUNT_TO_PRINT)
